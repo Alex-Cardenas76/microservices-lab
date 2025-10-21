@@ -13,3 +13,5 @@ Su principal función es gestionar los usuarios y el acceso mediante **tokens JW
 - Django REST Framework o FastAPI (por definir)
 - PostgreSQL
 - Redis
+
+solucionado
