@@ -1,15 +1,22 @@
-# 💻 Frontend
+💻 Frontend
 
-Interfaz de usuario desarrollada con **React**, que permitirá interactuar con los microservicios (Auth, Blog y Email).  
-El objetivo es ofrecer una experiencia moderna, responsiva y sencilla.
+La interfaz de usuario será desarrollada con React y servirá como punto de interacción con los distintos microservicios (Auth, Blog y Email).
+Su meta es ofrecer una experiencia fluida, moderna y adaptable a diferentes dispositivos.
 
-## Funcionalidades previstas
-- Formularios de login y registro.
-- Listado y visualización de publicaciones del blog.
-- Panel de usuario con opciones básicas.
-- Comunicación con la API mediante fetch o Axios.
+⚙️ Funcionalidades principales
 
-## Tecnologías
-- React + Vite o Create React App
-- Axios
-- TailwindCSS o CSS Modules
+🔐 Formularios de registro e inicio de sesión conectados al Auth Service.
+
+📰 Listado y detalle de publicaciones del blog.
+
+👤 Panel de usuario con opciones básicas de gestión.
+
+🌐 Comunicación con las APIs mediante fetch o Axios para consumir los servicios del backend.
+
+🧰 Tecnologías a utilizar
+
+⚛️ React con Vite o Create React App.
+
+🔗 Axios para las peticiones HTTP.
+
+🎨 TailwindCSS o CSS Modules para el diseño y la personalización de estilos.

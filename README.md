@@ -1,26 +1,29 @@
-# 🧪 Laboratorio de Microservicios (Django + React)
+# 🧪 **Laboratorio de Microservicios (Django + React)**
 
-Este proyecto es un entorno de práctica para aprender microservicios utilizando Django (backend), React (frontend), y Docker Compose como herramienta de orquestación.
-
----
-
-## ⚙️ Arquitectura inicial
-
-**Servicios principales:**
-- **auth-service/** → Servicio de autenticación (usuarios, login, JWT)
-- **blog-service/** → Servicio de publicaciones, autores y categorías
-- **email-service/** → Servicio de notificaciones y envío de correos
-- **frontend/** → Interfaz React para consumir los microservicios
-- **reverse-proxy/** → Gateway local (Nginx o Traefik para enrutar peticiones)
-
-**Servicios base (en Docker Compose):**
-- **PostgreSQL** → Base de datos principal (puerto `5432`)
-- **Redis** → Sistema de cache y colas (puerto `6379`)
+Este proyecto sirve como un entorno práctico para **aprender microservicios**, integrando **Django** en el backend, **React** en el frontend y **Docker Compose** para la orquestación de los servicios.
 
 ---
 
-## 📂 Estructura del proyecto
+## ⚙️ **Arquitectura general**
 
+### 🧩 **Servicios principales**
+
+* 🔐 **auth-service/** → Maneja la **autenticación de usuarios**, registro, inicio de sesión y generación de **tokens JWT**.
+* 📝 **blog-service/** → Controla las **publicaciones**, **autores** y **categorías** del blog.
+* ✉️ **email-service/** → Se encarga del **envío de correos electrónicos** y **notificaciones**.
+* 💻 **frontend/** → Interfaz creada con **React**, que consume los endpoints de los microservicios.
+* 🌐 **reverse-proxy/** → Actúa como **gateway local** (Nginx o Traefik) para enrutar las peticiones a los servicios correspondientes.
+
+### 🧱 **Servicios base (Docker Compose)**
+
+* 🐘 **PostgreSQL** → Base de datos principal (puerto `5432`).
+* ⚡ **Redis** → Sistema de **cache** y **colas de mensajes** (puerto `6379`).
+
+---
+
+## 📂 **Estructura del proyecto**
+
+```
 microservices-lab/
 │
 ├── auth-service/
@@ -33,14 +36,17 @@ microservices-lab/
 ├── .env.example
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
-## 🚀 Iniciar entorno base
+## 🚀 **Inicio del entorno base**
+
+Ejecuta los siguientes comandos para levantar los servicios principales:
 
 ```bash
 docker compose up -d
 docker ps
+```
 
-Si ves los contenedores db_postgres y cache_redis activos ✅, el entorno base está listo.
+✅ Si ves los contenedores **db_postgres** y **cache_redis** en ejecución, ¡el entorno base está listo para usarse!

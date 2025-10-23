@@ -1,15 +1,22 @@
-# 📝 Blog Service
+📝 Blog Service
 
-Este servicio manejará toda la **lógica relacionada con publicaciones y autores**.  
-Será responsable de almacenar, listar y administrar los artículos publicados por los usuarios.
+Este servicio se encargará de toda la gestión de publicaciones, autores y categorías dentro del sistema.
+Su objetivo es almacenar, mostrar y administrar los artículos creados por los usuarios, garantizando una comunicación segura con el servicio de autenticación.
 
-## Funcionalidades previstas
-- CRUD de publicaciones (crear, leer, actualizar y eliminar).
-- Gestión de autores y categorías.
-- Comunicación con el Auth Service para validar permisos de usuario.
-- Cache de consultas frecuentes con Redis.
+⚙️ Funcionalidades principales
 
-## Tecnologías
-- Django REST Framework o FastAPI
-- PostgreSQL
-- Redis
+🧾 CRUD completo de publicaciones (crear, leer, actualizar y eliminar).
+
+👩‍💻 Gestión de autores y organización por categorías.
+
+🔐 Integración con el Auth Service para validar permisos y autenticación de usuarios.
+
+⚡ Implementación de caché con Redis para optimizar consultas frecuentes.
+
+🧰 Tecnologías a utilizar
+
+🐍 Django REST Framework o FastAPI
+
+🐘 PostgreSQL
+
+⚡ Redis

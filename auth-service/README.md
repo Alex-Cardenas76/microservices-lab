@@ -1,15 +1,21 @@
-# 🔐 Auth Service
+# 🔐 **Auth Service**
 
-Este servicio se encargará de la **autenticación y autorización** dentro del sistema de microservicios.  
-Su principal función es gestionar los usuarios y el acceso mediante **tokens JWT (JSON Web Tokens)**.
+Este servicio se encarga de la **autenticación y autorización** dentro del ecosistema de microservicios.
+Su propósito principal es administrar los **usuarios** y controlar el **acceso seguro** a través de **tokens JWT (JSON Web Tokens)**.
 
-## Funcionalidades previstas
-- Registro y login de usuarios.
-- Generación y validación de tokens JWT.
-- Protección de rutas privadas para otros microservicios.
-- Integración futura con PostgreSQL y Redis para sesiones y caché.
+---
 
-## Tecnologías
-- Django REST Framework o FastAPI (por definir)
-- PostgreSQL
-- Redis
+## ⚙️ **Funcionalidades principales**
+
+* 🧾 **Registro e inicio de sesión** de usuarios.
+* 🔑 **Creación y validación de tokens JWT** para la autenticación.
+* 🛡️ **Protección de rutas privadas** utilizadas por otros microservicios.
+* 🧠 **Integración futura** con **PostgreSQL** y **Redis** para manejar sesiones y caché.
+
+---
+
+## 🧰 **Tecnologías a utilizar**
+
+* 🐍 **Django REST Framework** o **FastAPI** *(pendiente de decisión)*
+* 🐘 **PostgreSQL**
+* ⚡ **Redis**
