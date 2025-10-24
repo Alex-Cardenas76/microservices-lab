@@ -1,7 +1,7 @@
 django==5.0
 djangorestframework==3.15
 djangorestframework-simplejwt==5.3
-psycopg2-binary
+psycopg2-binary #Permite que Python/Django se conecte a PostgreSQL
 redis
 django-cors-headers
 gunicorn
