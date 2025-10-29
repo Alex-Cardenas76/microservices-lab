@@ -1,0 +1,96 @@
+openapi: 3.0.3
+info:
+  title: Blog Service API
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8001
+paths:
+  /api/categories:
+    get:
+      summary: Lista categorías activas
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id: { type: integer }
+                    name: { type: string }
+                    slug: { type: string }
+  /api/posts:
+    get:
+      summary: Lista de posts con búsqueda y paginación
+      parameters:
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: page
+          schema: { type: integer }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count: { type: integer }
+                  next: { type: string, nullable: true }
+                  previous: { type: string, nullable: true }
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        title: { type: string }
+                        slug: { type: string }
+                        excerpt: { type: string }
+                        published_at: { type: string, format: date-time }
+                        author:
+                          type: object
+                          properties:
+                            id: { type: integer }
+                            display_name: { type: string }
+                        category:
+                          type: object
+                          properties:
+                            id: { type: integer }
+                            name: { type: string }
+  /api/posts/{id_or_slug}:
+    get:
+      summary: Detalle de post
+      parameters:
+        - in: path
+          name: id_or_slug
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: integer }
+                  title: { type: string }
+                  slug: { type: string }
+                  body: { type: string }
+                  published_at: { type: string, format: date-time }
+                  views: { type: integer }
+                  author:
+                    type: object
+                    properties:
+                      id: { type: integer }
+                      display_name: { type: string }
+                  category:
+                    type: object
+                    properties:
+                      id: { type: integer }
+                      name: { type: string }
