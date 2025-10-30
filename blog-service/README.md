@@ -84,9 +84,9 @@ microservices-lab/
 │           ├── urls.py
 │           ├── tests.py
 │           ├── migrations/
-│           └── management/
+│           └── management/         # Comandos personalizados
 │               └── commands/
-│                   └── seed_blog.py
+│                   └── seed_blog.py      #Script para poblar la DB con datos de ejemplo
 │
 ├── docker-compose.yml
 │
