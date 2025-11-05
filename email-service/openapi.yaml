@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: Email Service API
+  description: Microservicio para manejo de notificaciones y correos electrónicos
+  version: 1.0.0
+servers:
+  - url: http://localhost:8003/api
+    description: Development server
+
+paths:
+  /contact/:
+    post:
+      summary: Formulario de contacto público
+      description: Endpoint público para recibir mensajes de contacto desde el frontend
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - email
+                - message
+              properties:
+                name:
+                  type: string
+                  example: "Carlos"
+                email:
+                  type: string
+                  format: email
+                  example: "carlos@mail.com"
+                message:
+                  type: string
+                  example: "Me interesa una colaboración"
+      responses:
+        '200':
+          description: Mensaje recibido y encolado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "queued"
+
+  /notify/:
+    post:
+      summary: Notificación entre microservicios
+      description: Endpoint interno para comunicación entre microservicios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - to
+                - subject
+                - body
+              properties:
+                to:
+                  type: string
+                  format: email
+                  example: "usuario@mail.com"
+                subject:
+                  type: string
+                  example: "Nuevo Post Publicado"
+                body:
+                  type: string
+                  example: "Título del nuevo post..."
+      responses:
+        '200':
+          description: Notificación encolada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "queued"

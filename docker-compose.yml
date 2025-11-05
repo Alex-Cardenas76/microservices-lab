@@ -58,5 +58,23 @@ services:
     ports:
       - "8001:8001"
 
+  # Email Service
+  email:
+    build: ./email-service
+    container_name: email_service
+    environment:
+      - DEBUG=1
+      - DB_HOST=postgres
+      - DB_NAME=main_db
+      - DB_USER=devuser
+      - DB_PASS=devpass
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8003:8000"
+
 volumes:
   pgdata:
